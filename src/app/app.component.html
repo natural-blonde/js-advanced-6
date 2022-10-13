@@ -1,0 +1,82 @@
+<div class="main-container">
+  <header>
+    <div class="tittle-container">
+      <p class="tittle">Angular block</p>
+    </div>
+    <div class="sing-in-sing-out-container">
+      <button class="sing-in" (click)="singIn()">Sign In</button>
+      <button class="add-post" (click)="showModal()">Add Post</button>
+      <div class="user-in">{{ name }}</div>
+      <button class="sing-up" (click)="singUp()">Sign Up</button>
+      <button class="sing-out" (click)="singOut()">Sign Out</button>
+    </div>
+  </header>
+  <main>
+    <div class="blog" *ngFor="let blog of blogs; index as i">
+      <p class="invisible-element">{{i}}</p>
+      <p class="blog-topic">{{blog.topic}}</p>
+      <p class="blog-posted-by">Posted by: {{blog.postedBy}}</p>
+      <p class="blog-message">{{blog.message}}</p>
+      <p class="blog-date">{{blog.date}}</p>
+      <div class="btn-container">
+        <button class="blog-edit" (click)="edit($event)">Edit</button>
+        <button class="blog-delete" (click)="delete($event)">Delete</button>
+      </div>
+    </div>
+    <div class="sign-in-modal">
+      <p class="sing-in-text">Sign in</p>
+      <p class="email-text-sing-in">Email:</p>
+      <input type="text" class="email-form-sing-in">
+
+      <p class="password-text-sing-in">Password:</p>
+      <input type="password" class="password-form-sing-in">
+      <div class="close-sumbit-container">
+        <button class="close-btn" (click)="closeModal()">Close</button>
+        <button class="submit-btn" (click)="sumbitButton()">Submit</button>
+      </div>
+    </div>
+    <div class="add-post-modal">
+      <p class="add-post-text">Add post</p>
+      <p class="tittle-text">Tittle:</p>
+      <input type="text" class="tittle-input">
+      <p class="textarea-text">Text</p>
+      <textarea class="post-text"></textarea>
+      <span class="line"></span>
+      <div class="button-container">
+        <button class="close-post-modal" (click)="closePostModal()">Close</button>
+
+        <button class="post-btn" (click)="addPost()">Post</button>
+      </div>
+    </div>
+    <div class="sing-up-modal">
+        <p class="sing-up-text">Sing up</p>
+        <p class="username-text">Username:</p>
+        <input type="text" class="username-input">
+        <p class="email-text">Email:</p>
+        <input type="text" class="email-input">
+        <p class="password-text">Password:</p>
+        <input type="text" class="password-input">
+        <div class="button-container">
+          <button class="close-sing-up" (click)="closeSingUp()">Close</button>
+          <button class="submit-sing-up" (click)="newUserSingUp()">Submit</button>
+        </div>
+    </div>
+
+
+    <div class="edit-modal">
+      <p class="add-post-text">Add post</p>
+      <p class="tittle-text">Tittle:</p>
+      <input type="text" class="tittle-input-edit">
+      <p class="textarea-text">Text</p>
+      <textarea class="edit-text"></textarea>
+      <span class="line"></span>
+      <div class="button-container">
+        <button class="close-post-modal" (click)="closeEditModal()">Close</button>
+        <button class="post-btn" (click)="savePost()">Edit Post</button>
+      </div>
+    </div>
+
+
+  </main>
+</div>
+<div class="black-background"></div>
